@@ -50,8 +50,14 @@ btn.addEventListener('click', function () {
       (RockPaperScissors === 'Paper' && hend === 'rock')
     ) {
       alert('winner');
-    } else {
+    } else if (
+      (RockPaperScissors === 'Scissors' && hend === 'scissors') ||
+      (RockPaperScissors === 'Paper' && hend === 'paper') ||
+      (RockPaperScissors === 'Rock' && hend === 'rock')
+    ) {
       alert('tie');
+    } else {
+      alert('give me only this words: rock, paper or scissors ');
     }
   }
 
