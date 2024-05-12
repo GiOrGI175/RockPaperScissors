@@ -2,53 +2,58 @@ let btn = document.getElementById('startGame');
 
 let hend;
 
-function handdd() {
-  hend = prompt('choose Rock or Paper or Scissors');
-  hend.toLowerCase();
-  return hend;
-}
-
 btn.addEventListener('click', function () {
-  // hend = prompt('choose Rock or Paper or Scissors');
-  // hend.toLowerCase();
-  // return hend;
-  handdd();
-});
+  function playerhend() {
+    hend = prompt('choose Rock or Paper or Scissors');
+    hend = hend.toLowerCase();
+    console.log(hend);
+    return hend;
+  }
 
-console.log(handdd());
+  playerhend();
 
-let randomHend;
+  let randomHend;
 
-function RockPaperScissors() {
-  randomHend = Math.floor(Math.random() * 3) + 1;
-  // console.log(randomHend);
-
-  if (randomHend === 1) {
-    randomHend = 'Rock';
+  function RockPaperScissors() {
+    randomHend = Math.floor(Math.random() * 3) + 1;
     // console.log(randomHend);
-  } else if (randomHend === 2) {
-    randomHend = 'Paper';
-  } else if (randomHend === 3) {
-    randomHend = 'Scissors';
+
+    if (randomHend === 1) {
+      randomHend = 'Rock';
+      // console.log(randomHend);
+    } else if (randomHend === 2) {
+      randomHend = 'Paper';
+    } else if (randomHend === 3) {
+      randomHend = 'Scissors';
+    }
+    return randomHend;
   }
-  return randomHend;
-}
 
-RockPaperScissors();
+  RockPaperScissors();
 
-// let pcHend = RockPaperScissors();
+  // let pcHend = RockPaperScissors();
 
-// console.log(RockPaperScissors());
+  // console.log(RockPaperScissors());
 
-function whowinner(hend, RockPaperScissors) {
-  console.log(RockPaperScissors);
+  function whowinner(hend, RockPaperScissors) {
+    console.log(RockPaperScissors);
 
-  if (
-    (RockPaperScissors === 'Rock' && hend === 'Paper') ||
-    hend === 'Scissors'
-  ) {
-    alert('lose');
+    if (
+      (RockPaperScissors === 'Rock' && hend === 'scissors') ||
+      (RockPaperScissors === 'Scissors' && hend === 'paper') ||
+      (RockPaperScissors === 'Rock' && hend === 'paper')
+    ) {
+      alert('lose');
+    } else if (
+      (RockPaperScissors === 'Scissors' && hend === 'rock') ||
+      (RockPaperScissors === 'Paper' && hend === 'scissors') ||
+      (RockPaperScissors === 'Paper' && hend === 'rock')
+    ) {
+      alert('winner');
+    } else {
+      alert('tie');
+    }
   }
-}
 
-whowinner(hend, RockPaperScissors());
+  whowinner(hend, RockPaperScissors());
+});
